@@ -1,6 +1,6 @@
 package conta.model;
 
-public class Conta 
+public abstract class Conta 
 {
 	private String titular;
 	private int numero, agencia, tipo;

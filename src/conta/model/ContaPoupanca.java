@@ -4,10 +4,10 @@ public class ContaPoupanca extends Conta
 {
 	private int aniversario;
 	
-	public ContaPoupanca(String titular, int numero, int agencia, int tipo, float saldo, int aniversario)
-	{
+	
+	public ContaPoupanca(String titular, int numero, int agencia, int tipo, float saldo, int aniversario) {
 		super(titular, numero, agencia, tipo, saldo);
-		this.aniversario = aniversario; 
+		this.aniversario = aniversario;
 	}
 
 	public int getAniversario() 

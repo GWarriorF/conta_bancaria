@@ -3,7 +3,7 @@ package conta.model;
 public abstract class Conta 
 {
 	private String titular;
-	private int numero, agencia, tipo;
+	private int numero = 0, agencia, tipo;
 	private float saldo;
 	
 	public Conta(String titular, int numero, int agencia, int tipo, float saldo) 

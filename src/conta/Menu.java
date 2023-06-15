@@ -15,8 +15,8 @@ public class Menu
 	public static void main(String[] args) 
 	{
 		String titular;
-		float saldo, limite; 
-		int opcao, numero, agencia, tipo, aniversario;
+		float saldo, limite, valor; 
+		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
 		ContaController contas = new ContaController();
 		Scanner ler = new Scanner(System.in);
 		
@@ -166,7 +166,16 @@ public class Menu
 				System.out.println(Cores.TEXTO_BRANCO_NEGRITO_INTENSO + "________________________________________\n");
 				System.out.println("                Saque");
 				System.out.println("________________________________________\n");
-
+				
+				System.out.print("Digite o número da conta: ");
+				numero = ler.nextInt();
+				
+				do {
+					System.out.print("Digite o valor de saque (R$): ");
+					valor = ler.nextFloat();
+				}while(valor <= 0);
+				
+				contas.sacar(numero, valor);
 				keyPress();
 				break;
 			case 7:
@@ -174,12 +183,34 @@ public class Menu
 				System.out.println("               Depósito");
 				System.out.println("________________________________________\n");
 
+				System.out.print("Digite o número da conta: ");
+				numero = ler.nextInt();
+				
+				do {
+					System.out.print("Digite o valor de depósito (R$): ");
+					valor = ler.nextFloat();
+				}while(valor <= 0);
+				
+				contas.depositar(numero, valor);
+				
 				keyPress();
 				break;
 			case 8:
 				System.out.println(Cores.TEXTO_BRANCO_NEGRITO_INTENSO + "________________________________________\n");
 				System.out.println("     Transferência entre as contas");
 				System.out.println("________________________________________\n");
+				
+				System.out.print("Digite o número da conta de origem: ");
+				numero = ler.nextInt();
+				System.out.print("Digite o número da conta de destino: ");
+				numeroDestino = ler.nextInt();	
+				
+				do {
+					System.out.print("Digite o valor de transferência (R$): ");
+					valor = ler.nextFloat();
+				}while(valor <= 0);
+				
+				contas.transferir(numero, numeroDestino, valor);
 
 				keyPress();
 				break;
